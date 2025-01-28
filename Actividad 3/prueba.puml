@@ -1,0 +1,29 @@
+@startuml
+
+class Empleado {
+    - codigo: str
+    - nombres: str
+    - horas_trabajadas: int
+    - valor_hora: float
+    - porcentaje_retencion: float
+    + Empleado(codigo: str, nombres: str, horas_trabajadas: int, valor_hora: float, porcentaje_retencion: float)
+    + calcular_salario_bruto(): float
+    + calcular_salario_neto(): float
+}
+
+class InterfazEmpleado {
+    - ventana: Tk
+    - entrada_codigo: Entry
+    - entrada_nombres: Entry
+    - entrada_horas: Entry
+    - entrada_valor_hora: Entry
+    - entrada_retencion: Entry
+    - resultados: Label
+    + __init__(ventana: Tk)
+    + crear_campo(frame: Frame, texto: str, atributo: str): None
+    + calcular_salario(): None
+}
+
+InterfazEmpleado --> Empleado
+
+@enduml
