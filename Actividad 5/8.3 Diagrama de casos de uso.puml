@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+
+actor Usuario
+
+rectangle "Gestión de Figuras Geométricas" {
+    usecase "Calcular Volumen \n de un Cilindro" as UC_Cilindro
+    usecase "Calcular Volumen \n de una Esfera" as UC_Esfera
+    usecase "Calcular Volumen \n de una Pirámide" as UC_Piramide
+
+    usecase "Calcular Superficie \n de un Cilindro" as UC_Superficie_Cilindro
+    usecase "Calcular Superficie \n de una Esfera" as UC_Superficie_Esfera
+    usecase "Calcular Superficie \n de una Pirámide" as UC_Superficie_Piramide
+
+    usecase "Seleccionar Figura \n en Ventana Principal" as UC_SeleccionarFigura
+}
+
+Usuario --> UC_SeleccionarFigura
+Usuario --> UC_Cilindro
+Usuario --> UC_Esfera
+Usuario --> UC_Piramide
+
+Usuario --> UC_Superficie_Cilindro
+Usuario --> UC_Superficie_Esfera
+Usuario --> UC_Superficie_Piramide
+
+UC_SeleccionarFigura --> UC_Cilindro
+UC_SeleccionarFigura --> UC_Esfera
+UC_SeleccionarFigura --> UC_Piramide
+@enduml

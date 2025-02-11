@@ -1,0 +1,22 @@
+@startuml
+actor Usuario
+
+rectangle "Sistema de Notas" {
+    ( "Ingresar Notas" ) as UC1
+    ( "Calcular Promedio" ) as UC2
+    ( "Calcular Desviación Estándar" ) as UC3
+    ( "Mostrar Nota Mayor" ) as UC4
+    ( "Mostrar Nota Menor" ) as UC5
+    ( "Limpiar Notas" ) as UC6
+}
+
+Usuario -[#black]-> UC1
+Usuario -[#black]-> UC2
+Usuario -[#black]-> UC3
+Usuario -[#black]-> UC4
+Usuario -[#black]-> UC5
+Usuario -[#black]-> UC6
+
+' Acomodo horizontal
+left to right direction
+@enduml

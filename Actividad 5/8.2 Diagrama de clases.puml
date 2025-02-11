@@ -1,0 +1,40 @@
+@startuml
+package Notas {
+    class Notas {
+        - lista_notas: float[5]
+        + calcular_promedio(): float
+        + calcular_desviacion(): float
+        + calcular_menor(): float
+        + calcular_mayor(): float
+    }
+
+    class VentanaPrincipal {
+        - root: tk.Tk
+        - notas: Notas
+        - campo_nota1: tk.Entry
+        - campo_nota2: tk.Entry
+        - campo_nota3: tk.Entry
+        - campo_nota4: tk.Entry
+        - campo_nota5: tk.Entry
+        - promedio: tk.Label
+        - desviacion: tk.Label
+        - mayor: tk.Label
+        - menor: tk.Label
+        + calcular(): void
+        + limpiar(): void
+    }
+
+    class tk.Tk
+    class tk.Entry
+    class tk.Label
+    class tk.Button
+    class messagebox
+
+    VentanaPrincipal --> Notas : "Usa"
+    VentanaPrincipal --> tk.Tk : "Extiende"
+    VentanaPrincipal --> tk.Entry : "Contiene"
+    VentanaPrincipal --> tk.Label : "Contiene"
+    VentanaPrincipal --> tk.Button : "Contiene"
+    VentanaPrincipal --> messagebox : "Usa"
+}
+@enduml

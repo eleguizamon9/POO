@@ -1,0 +1,89 @@
+@startuml
+class FiguraGeometrica {
+    - volumen : float
+    - superficie : float
+    + set_volumen(volumen: float)
+    + set_superficie(superficie: float)
+    + get_volumen() : float
+    + get_superficie() : float
+}
+
+class Cilindro {
+    - radio : float
+    - altura : float
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class Esfera {
+    - radio : float
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class Piramide {
+    - base : float
+    - altura : float
+    - apotema : float
+    + calcular_volumen() : float
+    + calcular_superficie() : float
+}
+
+class VentanaCilindro {
+    - contenedor : Container
+    - radio : JLabel
+    - altura : JLabel
+    - volumen : JLabel
+    - superficie : JLabel
+    - campo_radio : JTextField
+    - campo_altura : JTextField
+    - calcular : JButton
+}
+
+class VentanaEsfera {
+    - contenedor : Container
+    - radio : JLabel
+    - volumen : JLabel
+    - superficie : JLabel
+    - campo_radio : JTextField
+    - calcular : JButton
+}
+
+class VentanaPiramide {
+    - contenedor : Container
+    - base : JLabel
+    - altura : JLabel
+    - apotema : JLabel
+    - volumen : JLabel
+    - superficie : JLabel
+    - campo_base : JTextField
+    - campo_altura : JTextField
+    - campo_apotema : JTextField
+    - calcular : JButton
+}
+
+class VentanaPrincipal {
+    - contenedor : Container
+    - cilindro : JButton
+    - esfera : JButton
+    - piramide : JButton
+}
+
+class Principal {
+    + main()
+}
+
+FiguraGeometrica <|-- Cilindro
+FiguraGeometrica <|-- Esfera
+FiguraGeometrica <|-- Piramide
+
+VentanaPrincipal --> VentanaCilindro
+VentanaPrincipal --> VentanaEsfera
+VentanaPrincipal --> VentanaPiramide
+
+VentanaCilindro --> Cilindro
+VentanaEsfera --> Esfera
+VentanaPiramide --> Piramide
+
+Principal --> VentanaPrincipal
+@enduml
